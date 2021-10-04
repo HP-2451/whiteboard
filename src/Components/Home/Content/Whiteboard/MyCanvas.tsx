@@ -72,7 +72,7 @@ const MyCanvas: React.FunctionComponent<MyCanvasProps> = ({
                   console.log("recieved", "image");
 
                   makeImage.style.width = "100%";
-                  makeImage.style.height = "79%";
+                  makeImage.style.height = "100%";
                   // makeImage.style.overflow = "hidden"
 
                   context.drawImage(makeImage, 0, 0);
@@ -124,7 +124,7 @@ const MyCanvas: React.FunctionComponent<MyCanvasProps> = ({
       console.log(input);
       var parent: any = document.getElementById("drawing-area");
       html2canvas(parent).then((canvas) => {
-        var image = canvas.toDataURL();
+        var image = canvas.toDataURL("image/jpeg");
 
         console.log("send image", image);
 
@@ -186,12 +186,15 @@ const MyCanvas: React.FunctionComponent<MyCanvasProps> = ({
             var input = document.createElement("input");
             input.type = "text";
             input.id = "1";
+            input.placeholder = "Enter Text";
             input.style.position = "absolute";
             input.style.top = "250px";
             input.style.left = "450px";
-            input.style.height = "30px";
+            // input.style.height = "30px";
+            input.style.width = 'auto'
             input.style.borderRadius = "10px";
-            input.style.padding = "10px";
+            input.style.padding = "5px";
+            input.style.cursor = "pointer";
             input.value = textValue;
             input.draggable = true;
             input.ondragstart = handleDragStart;
@@ -203,7 +206,7 @@ const MyCanvas: React.FunctionComponent<MyCanvasProps> = ({
           if (selectedTool.name !== PENCIL && selectedTool.name !== ERASER) {
             var parent: any = document.getElementById("drawing-area");
             html2canvas(parent).then((canvas) => {
-              var image = canvas.toDataURL();
+              var image = canvas.toDataURL("image/jpeg");
 
               console.log("send image", image);
 
@@ -244,7 +247,7 @@ const MyCanvas: React.FunctionComponent<MyCanvasProps> = ({
     if (selectedTool.name === PENCIL) {
       var parent: any = document.getElementById("drawing-area");
       html2canvas(parent).then((canvas) => {
-        var image = canvas.toDataURL("image/png");
+        var image = canvas.toDataURL("image/jpeg");
 
         console.log("send image", image);
 

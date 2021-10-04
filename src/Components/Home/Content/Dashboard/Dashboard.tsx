@@ -174,6 +174,8 @@ const Dashboard: React.FunctionComponent<MyComponent> = (props) => {
 
       html2canvas(form).then((canvas) => {
         const img = canvas.toDataURL("image/jpeg");
+        console.log("image",img);
+        
         doc.addImage(img, "JPEG", 50, 10, 200, 200);
         // doc.save("file.pdf")
         let pdfSampleData = doc.output('dataurlstring');
