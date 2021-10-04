@@ -1,0 +1,10 @@
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    .signout-btn{
+        border-radius: 5px;
+        width: 120px;
+    }   
+}

@@ -1,0 +1,22 @@
+.ant-layout{
+    height: 100vh;
+
+    .ant-layout-sider, .ant-layout-header {
+        background-color: #FFFFFF;
+        // height: 100vh;
+    }
+    .ant-layout-content{
+        padding: 30px;
+
+        .dashboard-card{
+            border-radius: 10px;
+        }
+    }
+    .ant-layout-sider-trigger{
+        background-color: #05506E !important;
+    }
+
+    .ant-layout-footer{
+        padding: 18px 30px !important;
+    }
+}
